@@ -9,7 +9,7 @@
 
 ---
 
-## 🌐 Live Features
+##  Live Features
 
 -  **Home** — Hero section with highlights
 -  **Courses** — Browse available Chinese language courses
@@ -61,34 +61,61 @@ python manage.py runserver
 
 ## 📁 Project Structure
 
+```
 chinese_website/
-
 │
-├── chinese_website/        # Project settings
+├── manage.py
+├── requirements.txt
+├── .gitignore
+│
+├── chinese_website/          # Project configuration
 │   ├── settings.py
 │   ├── urls.py
+│   ├── asgi.py
 │   └── wsgi.py
 │
-├── main/                   # Main application
+├── main/                     # Main application
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
-│   ├── admin.py
-│   ├── forms.py
-│   ├── static/             # CSS, JS, Images
-│   └── templates/          # HTML Templates
+│   │
+│   ├── migrations/
+│   │   └── 0001_initial.py
+│   │
+│   ├── static/main/
+│   │   ├── css/
+│   │   │   ├── style.css
+│   │   │   ├── home.css
+│   │   │   ├── about.css
+│   │   │   ├── courses.css
+│   │   │   ├── contact.css
+│   │   │   ├── footer.css
+│   │   │   └── bootstrap.min.css
+│   │   │
+│   │   └── images/
+│   │       ├── logo1.jpeg
+│   │       ├── logo2.jpeg
+│   │       ├── h1.jpg
+│   │       └── hero.jpg
+│   │
+│   └── templates/main/
+│       ├── base.html
+│       ├── home.html
+│       ├── about.html
+│       ├── courses.html
+│       ├── course_detail.html
+│       └── contact.html
 │
-├── media/                  # Uploaded content
-│   ├── courses/
-│   ├── features/
-│   ├── testimonials/
-│   └── about/
-│
-├── manage.py
-└── requirements.txt
-
-
----
+└── media/                    # Uploaded content (via Django Admin)
+    ├── about/
+    ├── courses/
+    ├── features/
+    ├── testimonials/
+    └── videos/
+```
 
 ##  Developer
 
@@ -109,4 +136,4 @@ This project is for educational purposes under **ICTS Consulting**.
 
 ---
 
-<p align="center"> by Shanum — ICTS Consulting</p>
+<p align="center"> Shanum — ICTS Consulting</p>
