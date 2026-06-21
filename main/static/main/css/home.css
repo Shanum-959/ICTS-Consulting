@@ -1,0 +1,342 @@
+/* ============================
+   HERO SECTION
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #ffffff;
+}
+
+.hero-section {
+    background: url("../images/h1.jpg") no-repeat center center / cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 0px;
+    background-position: left center; /* 🔥 left side visible rahegi */
+
+    overflow: hidden;
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+    padding-left: 40px;
+    
+}
+
+/* HEADING */
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 18px;
+}
+
+/* PARAGRAPH */
+.hero-section p {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 29px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* BUTTON STYLES */
+.hero-btn {
+    background: #FFB424;
+    color: #000;
+    padding: 12px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #EF2A39;
+    color: #fff;
+}
+
+.hero-btn-outline {
+    background: transparent;
+    color: #000;
+    padding: 12px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 2px solid #FFB424;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.hero-btn-outline:hover {
+    background: #FFB424;
+}
+
+/* Wave container */
+
+/* Hero Wave Container */
+/* Wave Container */
+.hero-wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.wave-svg {
+    position: absolute;
+    display: block;
+    width: 180%; /* double width for smooth animation */
+    height: 100%;
+    bottom: 0;
+}
+
+.wave-path {
+    fill: #EF2A39;   /* Red Color */
+}
+
+/* Upper fast wave */
+.wave-fast .wave-path {
+    animation: waveFast 3s linear infinite;
+}
+
+/* Lower slow wave */
+.wave-slow .wave-path {
+    opacity: 0.5;   
+    /* slightly transparent for depth effect */
+    animation: waveSlow 5s linear infinite;
+}
+
+/* Wave animations */
+@keyframes waveFast {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-60%); }
+}
+
+@keyframes waveSlow {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-30%); }
+}
+/* MOBILE */
+/* @media(max-width: 768px) {
+    .hero-section h1 {
+        font-size: 32px;
+         padding: 10px;
+        margin-left: 30px;
+
+    }
+} */
+@media(max-width: 768px)
+{
+
+    
+    .hero-section {
+        min-height: auto;
+        min-width: 100%;               /* 🔥 height force band */
+        padding-top: 80px;
+        padding-bottom: 120px;
+    background-position: left center; /* 🔥 left side visible rahegi */
+        background-size: cover;
+    }
+
+    .hero-content {
+        padding-left: 10px;
+        max-width: 100%;
+    }
+
+    .hero-section h1 {
+        font-size: 32px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+     .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-wave {
+        height: 90px;
+    }
+}
+     /* .hero-section h1 { font-size: 32px; margin-left: 30px; padding: 10px; }
+    .hero-section p { font-size: 16px; margin-left: 20px; padding: 10px; }
+        .hero-wave { height: 100px; }
+        .hero-buttons {
+        flex-direction: column;   /* mobile me buttons neeche neeche 
+        margin-left: 20px;
+    }*/
+
+
+
+
+/* ============================
+    TRUST FEATURES
+============================ */
+.trust-features h2 {
+    color: #000000;
+    font-weight: 800;
+}
+.trust-features .card {
+    border: none;
+    transition: .3s;
+    padding: 25px;
+}
+
+.trust-features .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.1);
+}
+
+.trust-features img {
+ width: 60px;
+ height: 60px;}
+
+/* ============================
+    TESTIMONIALS
+============================ */
+.testimonials h2 {
+    color: #000000;
+    font-weight: 800;
+}
+.testimonials .card {
+    border: none;
+    background: #EF2A39;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.testimonials .card:hover {
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.testimonials img {
+    border: 3px solid #FFB424;
+}
+
+/* ============================
+   FAQ / Q&A ACCORDION
+============================ */
+/* ============================
+   FAQ RED THEME
+============================ */
+
+/* Section Heading */
+.qas {
+    background-color: #ffffff !important;
+}
+.red-word {
+    color: #EF2A39;
+}
+
+.qas h2 {
+    color: #000000;
+    font-weight: 700;
+}
+
+/* Question button */
+.qas .card-header {
+    background: linear-gradient(
+        180deg,
+        #FFB424 0%,
+        #FFB424 60%,
+        #FFB424    );
+
+    border-bottom: 2px solid #ffa909;
+    border-radius: 18px 18px 0 0;
+}
+
+.qas .card-header button {
+    color: #000000;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+}
+.qas .card-header button:focus,
+.qas .card-header button:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Hover effect */
+.qas .card-header button:hover {
+    color: #ffffff; /* darker red */
+}
+
+/* Active (opened) question */
+.qas .card-header button[aria-expanded="true"] {
+    color: #ffffff;
+}
+
+/* Answer text */
+.qas .card-body {
+    color: #000000;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  border-radius: 0 0 18px 18px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Card style */
+.qas .card {
+    border-radius: 18px;
+    border: 1px solid #000000;
+    margin-bottom: 14px;
+    overflow: hidden; /* important */
+
+     background: linear-gradient(
+        180deg,
+         #ffffff 0%,
+        #ffffff 60%,
+        #ffd588 );
+         border: 1px solid #f1d86a;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+ .qas .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+/* ============================
+   PROCESS VIDEO
+============================ */
+.process-video h2 {
+    font-weight: 700;
+    color: #EF2A39;
+}
+
+.process-video p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+.process-video iframe {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+

@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}About Us - Chinese Company{% endblock %}
+
+{% block content %}
+<section class="about-section py-5">
+    <div class="container about-container text-center">
+        <h1>About <span class="company-name">Chinese Company</span></h1>
+
+        {% if about %}
+            {% if about.image %}
+            <div class="mb-4">
+                <img src="{{ about.image.url }}" alt="{{ about.title }}" class="img-fluid rounded shadow-sm">
+            </div>
+            {% endif %}
+
+            <h2>{{ about.title }}</h2>
+
+            {% if about.mission %}
+            <h3>Our Mission</h3>
+            <p>{{ about.mission|linebreaks|safe }}</p>
+            {% endif %}
+
+            {% if about.vision %}
+            <h3>Our Vision</h3>
+            <p>{{ about.vision|linebreaks|safe }}</p>
+            {% endif %}
+
+            {% if about.content %}
+            <h3>Company Introduction</h3>
+            <p>{{ about.content|linebreaks|safe }}</p>
+            {% endif %}
+
+        {% else %}
+            <p>No content available.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

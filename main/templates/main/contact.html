@@ -1,0 +1,77 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - Chinese Company{% endblock %}
+
+{% block content %}
+<section class="contact-section py-5">
+    <h1>Contact Us</h1>
+
+    <h3>Send a Message</h3>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group mb-3">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <div class="text-danger">
+                        {% for error in field.errors %} {{ error }} {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    {% if contact_info %}
+        <div class="contact-info mt-5">
+            <h3>Company Info</h3>
+            <p><strong>Name:</strong> {{ contact_info.company_name }}</p>
+            <p><strong>Address:</strong> {{ contact_info.address }}</p>
+            <p><strong>Phone:</strong> {{ contact_info.phone }}</p>
+            <p><strong>Email:</strong> {{ contact_info.email }}</p>
+            {% if contact_info.wechat %}
+                <p><strong>WeChat:</strong> {{ contact_info.wechat }}</p>
+            {% endif %}
+            <h4>Privacy Policy</h4>
+            <p>{{ contact_info.privacy_policy|linebreaks }}</p>
+        </div>
+    {% endif %}
+</section>
+
+{% if testimonials %}
+<section class="testimonials py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Testimonials</h2>
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 p-3">
+                    {% if testimonial.photo %}
+                    <img src="{{ testimonial.photo.url }}" class="rounded-circle mb-2" alt="{{ testimonial.name }}" style="width:60px; height:60px;">
+                    {% endif %}
+                    <p>"{{ testimonial.content }}"</p>
+                    <strong>{{ testimonial.name }}</strong>
+                    {% if testimonial.position or testimonial.company %}
+                        <small>{{ testimonial.position }}{% if testimonial.position and testimonial.company %}, {% endif %}{{ testimonial.company }}</small>
+                    {% endif %}
+
+                    <div class="rating mt-2">
+            {% for i in "12345" %}
+                {% if forloop.counter <= testimonial.rating %}
+                    <span style="color: #FFD700;">&#9733;</span> <!-- filled star -->
+                {% else %}
+                    <span style="color: #ccc;">&#9733;</span> <!-- empty star -->
+                {% endif %}
+            {% endfor %}
+        </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
+

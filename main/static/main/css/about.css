@@ -1,0 +1,60 @@
+/* Main container */
+.about-container {
+    max-width: 900px;  /* Bara container */
+    margin: 0 auto;    /* Center horizontally */
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+.about-section h2{color: black;    font-weight: 700;    margin-bottom: 20px;
+
+}
+.about-section h1,
+.about-section h3 {
+    font-weight: 700;
+    color: #EF2A39; /* Red color for headings */
+    margin-bottom: 20px;
+}
+
+/* Company name yellow */
+.company-name {
+    color: #FFD700; /* Gold/Yellow color for company name */
+}
+
+/* Paragraph text */
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Images */
+.about-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .about-container {
+        padding: 20px;
+    }
+
+    .about-section h1 {
+        font-size: 28px;
+    }
+
+    .about-section h2 {
+        font-size: 24px;
+    }
+
+    .about-section h3 {
+        font-size: 20px;
+    }
+}

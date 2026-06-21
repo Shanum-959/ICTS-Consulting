@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Company Website{% endblock %}</title>
+
+    {% comment %} <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"> {% endcomment %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'main/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/footer.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'main/css/courses.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+    
+
+
+</head>
+<body>
+
+
+<div class="header-container">
+    <div class="header-bg" style="background-image: url('{% static 'main/images/01.png' %}');"></div>
+
+    <div class="header-bar">
+        <!-- DESKTOP MENU -->
+        <nav class="desktop-nav">
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'courses' %}">Courses</a></li>
+                <li><a href="https://www.facebook.com/YourCompanyPage" target="_blank">Facebook</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+
+       <!-- MOBILE DROPDOWN -->
+        <div class="mobile-nav">
+            <nav class="navbar navbar-dark mobile-navbar">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+              
+            <div class="collapse" id="mobileMenu">
+            <div id="mobileMenuBox">
+                <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'courses' %}">Courses</a>
+                    <a href="https://www.facebook.com/YourCompanyPage" target="_blank">Facebook</a>
+                    <a href="{% url 'about' %}">About</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </div>
+</div>
+        </div>
+
+    </div>
+
+
+
+    <div class="logo-left"></div>
+    <div class="logo-right"></div>
+
+    </div>
+
+<!-- Messages -->
+<div class="container mt-3">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<!-- Main Content -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<!-- templates/partials/footer.html -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-company">
+            <h2>ICT Consulting</h2>
+            <p>
+                A premier Chinese language institute providing expert guidance and modern learning solutions for individuals and organizations. We empower students with practical language skills and cultural insights.
+            </p>
+        </div>
+
+        <!-- Contact Info & Socials -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Address:</strong> 123 Learning Street, Lahore, Pakistan</p>
+            <p><strong>Phone:</strong> +92 300 1234567</p>
+            <div class="footer-socials">
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 ICT Consulting. All rights reserved.
+    </div>
+</footer>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

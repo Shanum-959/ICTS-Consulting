@@ -1,0 +1,205 @@
+/* Reset & Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #ffffff;
+}
+
+/* Header Container */
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 200px; 
+    min-height: 100px;/* default desktop height */
+    overflow: visible;
+    background: #fff;
+}
+
+/* Header Background Image (HTML <img>) */
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-size: cover;       /* fill container responsively */
+    background-position: center;  /* center the image */
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+
+
+/* Header Bar */
+.header-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #EF2A39;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logos */
+.logo-left,
+.logo-right {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    background-size: cover;        /* ⭐ important */
+    background-position: center;   /* ⭐ image center rahe */
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    z-index: 3;
+    background-color: #fff;  
+}
+
+.logo-left {
+    left: 30px;
+    background-image: url("../images/logo1.jpeg"); /* css se ek level up jao aur images folder me jao */
+}
+
+.logo-right {
+    right: 30px;
+    background-image: url("../images/logo2.jpeg");
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    z-index: 4;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #FFD700;
+    transform: translateY(-2px);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+}
+
+#mobileMenuBox {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 4px;
+    width: 100%;
+     top: 100%;
+    margin: 1px auto;
+    z-index: 9999;
+    text-align: center;
+}
+
+#mobileMenuBox a {
+    display: block;
+    padding: 2px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+#mobileMenuBox a:last-child {
+    border-bottom: none;
+}
+
+#mobileMenuBox a:hover {
+    color: #e74c3c;
+}
+
+.mobile-navbar {
+    background: #e74c3c !important;
+    padding: 5px 7px;
+    text-align: center;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(0%);
+}
+
+/* Responsive Header, Logos, Navigation */
+@media (max-width: 1200px) {
+    .header-container { height: 160px; }
+}
+
+@media (max-width: 992px) {
+    .header-container { height: 140px; }
+}
+
+@media (max-width: 768px) {
+        .header-container {
+        overflow: visible;
+    }
+
+     .mobile-nav {
+        display: block;        /* ⭐ IMPORTANT */
+        position: relative;
+        z-index: 9998;
+    }
+    .desktop-nav { display: none; }
+    /* .mobile-nav { display: block; z-index: 1; }
+
+    .header-container { height: 120px; } */
+    .header-bar { height: 80px; }
+
+    .logo-left,
+    .logo-right {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container { height: 100px; }
+    .header-bar { height: 70px; }
+    
+    .logo-left,
+    .logo-right {
+        width: 60px;
+        height: 60px;
+    }
+
+    #mobileMenuBox a { font-size: 12px; padding: 2px 0; }
+}
+
+/* Main Padding Bottom */
+main {
+    padding-bottom: 200px;
+}

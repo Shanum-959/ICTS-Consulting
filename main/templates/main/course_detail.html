@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}{{ course.title }} - Course Detail{% endblock %}
+
+{% block content %}
+<section class="course-detail-section py-5">
+    <a href="{% url 'courses' %}" class="btn btn-secondary mb-3">Back to Courses</a>
+
+    <h1>{{ course.title }}</h1>
+
+    {% if course.image %}
+        <img src="{{ course.image.url }}" alt="{{ course.title }}" class="img-fluid mb-3">
+    {% endif %}
+
+    <h3>Course Info</h3>
+    {% if course.level %}<p>Level: {{ course.level }}</p>{% endif %}
+    {% if course.duration %}<p>Duration: {{ course.duration }}</p>{% endif %}
+    {% if course.price %}<p>Price: ¥{{ course.price }}</p>{% endif %}
+
+    <h3>Course Description</h3>
+    <p>{{ course.description }}</p>
+
+    <h3>Course Content</h3>
+    <p>{{ course.detailed_content|linebreaks }}</p>
+
+    <a href="{% url 'contact' %}" class="btn btn-primary mt-3">Contact Us</a>
+</section>
+{% endblock %}
